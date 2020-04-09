@@ -127,7 +127,9 @@ http_req(Path, Query, Retry) ->
 
 
 do_http_req(Path0, Query) ->
+    rabbit_log:info("~p:do_http_req Path0 ~p", [?MODULE, Path0]),
     URI = uri_parser:parse(Path0, [{port, 80}]),
+    rabbit_log:info("~p:do_http_req URI ~p", [?MODULE, URI]),
     {host, Host} = lists:keyfind(host, 1, URI),
     {port, Port} = lists:keyfind(port, 1, URI),
     HostHdr = rabbit_misc:format("~s:~b", [Host, Port]),
