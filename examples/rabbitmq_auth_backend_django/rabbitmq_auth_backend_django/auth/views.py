@@ -14,6 +14,9 @@ def user(request):
         if username == 'admin':
             return HttpResponse("allow administrator")
 
+        if username == 'lbakken':
+            return HttpResponse("allow management")
+
         if username == 'someuser':
             return HttpResponse("allow")
 
@@ -28,7 +31,10 @@ def user(request):
 @csrf_exempt
 def vhost(request):
     logger.info(request.GET)
-    return HttpResponse("allow")
+    vhost = request.GET['vhost']
+    if vhost.startswith('VESC'):
+        return HttpResponse("allow")
+    return HttpResponse("deny")
 
 @csrf_exempt
 def resource(request):
