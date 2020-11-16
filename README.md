@@ -1,4 +1,11 @@
-# Overview
+# HTTP-based authorisation and authentication for RabbitMQ 
+
+## This was migrated to https://github.com/rabbitmq/rabbitmq-server
+
+This repository has been moved to the main unified RabbitMQ "monorepo", including all open issues. You can find the source under [/deps/rabbitmq_auth_backend_http](https://github.com/rabbitmq/rabbitmq-server/tree/master/deps/rabbitmq_auth_backend_http).
+All issues have been transferred.
+
+## Overview
 
 This plugin provides the ability for your RabbitMQ server to perform
 authentication (determining who can log in) and authorisation
